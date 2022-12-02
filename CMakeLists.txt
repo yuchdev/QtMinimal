@@ -11,5 +11,5 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 
-add_executable(qt_minimal main.cpp)
+add_executable(qt_minimal main.cpp qt_application.cpp qt_application.h)
 target_link_libraries(qt_minimal Qt5::Core Qt5::Widgets)
