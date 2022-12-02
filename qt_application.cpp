@@ -14,21 +14,23 @@ QtMinimalApplication::QtMinimalApplication(QWidget* parent /*= nullptr*/) :
     initWidgets();
 }
 
-void DiffApplication::initWidgets()
+void QtMinimalApplication::initWidgets()
 {
     auto* layout = new QVBoxLayout;
     layout->addWidget(tabLayout(this));
     layout->setMargin(3);
+
+    this->addTab(tabLayout(this), "Tab One");
+    this->addTab(tabLayout(this), "Tab Two");
+
     this->setLayout(layout);
 }
 
-QWidget* DiffApplication::tabLayout(QWidget*)
+QWidget* QtMinimalApplication::tabLayout(QWidget*)
 {
     auto* wnd = new QTabWidget;
     auto* box = new QVBoxLayout();
 
-    wnd->addTab(firstPictureWgt_, "Tab One");
-    wnd->addTab(secondPictureWgt_, "Tab Two");
 
     wnd->setLayout(box);
     return wnd;

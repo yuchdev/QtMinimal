@@ -18,5 +18,4 @@ int main(int argc, char **argv)
     wnd.show();
 
     return QApplication::exec();
-
 }
