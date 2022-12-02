@@ -16,22 +16,25 @@ QtMinimalApplication::QtMinimalApplication(QWidget* parent /*= nullptr*/) :
 
 void QtMinimalApplication::initWidgets()
 {
+    auto* wnd = new QTabWidget;
     auto* layout = new QVBoxLayout;
     layout->addWidget(tabLayout(this));
     layout->setMargin(3);
 
-    this->addTab(tabLayout(this), "Tab One");
-    this->addTab(tabLayout(this), "Tab Two");
+    wnd->addTab(tabLayout(this), "Tab One");
+    wnd->addTab(tabLayout(this), "Tab Two");
 
     this->setLayout(layout);
 }
 
 QWidget* QtMinimalApplication::tabLayout(QWidget*)
 {
-    auto* wnd = new QTabWidget;
     auto* box = new QVBoxLayout();
-
-
-    wnd->setLayout(box);
-    return wnd;
+    auto* widget = new QWidget();
+    auto* label = new QLabel("Label");
+    auto* button = new QPushButton("Button");
+    box->addWidget(label);
+    box->addWidget(button);
+    widget->setLayout(box);
+    return widget;
 }
